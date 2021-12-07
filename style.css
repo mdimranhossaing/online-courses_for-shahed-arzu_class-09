@@ -1,0 +1,95 @@
+h1 {
+  position: relative;
+  text-align: center;
+  transition: 2s;
+  margin-bottom: 150px;
+}
+
+
+h1::before {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  content: '';
+  width: 100px;
+  height: 5px;
+  background-color: red;
+  transform: translateX(-50%);
+  transition: 2s;
+}
+
+h1::after {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  content: '';
+  width: 100px;
+  height: 5px;
+  background-color: blue;
+  transform: translateX(-50%);
+  transition: 2s;
+}
+
+
+h1:hover {
+  color: green;
+}
+
+h1:hover::before {
+  top: calc(100% + 5px);
+}
+
+h1:hover::after {
+  bottom: calc(100% + 5px);
+}
+
+
+
+
+.box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  margin: 200px auto;
+  transition: 1s;
+}
+
+
+.box::before {
+  position: absolute;
+  left: -100%;
+  top: -100%;
+  content: '';
+  width: inherit;
+  height: inherit;
+  background-color: red;
+  transition: 1s;
+}
+
+.box::after {
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  content: '';
+  width: inherit;
+  height: inherit;
+  background-color: blue;
+  transition: 1s;
+}
+
+.box:hover {
+  background-color: orange;
+}
+
+.box:hover::before {
+  left: 100%;
+  top: 100%;
+  background-color: aqua;
+}
+
+.box:hover::after {
+  left: -100%;
+  top: -100%;
+  background-color: brown;
+}
